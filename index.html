@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accessible Design Co.</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header role="banner">
+    <h1>Accessible Design Co.</h1>
+    <nav role="navigation" aria-label="Main navigation">
+      <ul>
+        <li><a href="#" aria-current="page">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="hero" aria-labelledby="hero-title">
+    <h2 id="hero-title">Designing built with everyone in mind</h2>
+    <img src="https://fastly.picsum.photos/id/107/5000/3333.jpg?hmac=RA_wrO9Hs-AelIqfc3yu08bk_5CZ6FhFyy1CQ_qhgjs" alt="Sun shining over a field of grass" />
+    <p>We help craft accessible and universal experiences with all users in mind.</p>
+    <button aria-expanded="false" aria-controls="more-info">Learn More</button>
+    <div id="more-info" hidden>
+      <p>We believe accessibility is universal across all platforms — from websites to applications.</p>
+    </div>
+  </section>
+
+  <section id="about" aria-labelledby="about-title">
+    <h2 id="about-title">About Us</h2>
+    <img src="https://media.gettyimages.com/id/2151571696/photo/effective-teamwork-in-software-development-to-stronger-team-relationships-and-trust-in-your.jpg?s=2048x2048&w=gi&k=20&c=VsvigMw5w32WTUlSkwfjuCoDjjXq4rc8fLysMan8bLA=" alt="Smiling team member giving a presentation on accessibility" />
+    <p>We are passionate about creating websites and applications that everyone can use.</p>
+  </section>
+
+  <section id="services" aria-labelledby="services-title">
+    <h2 id="services-title">Our Services</h2>
+    <article>
+      <img src="https://dynomapper.com/images/responsive_web_design.jpg" alt="Wireframe sketch of a responsive web design" />
+      <h3>Web Design</h3>
+      <p>Modern, accessible, and responsive websites built with best practices.</p>
+    </article>
+    <article>
+      <img src="https://accessibilitypartners.ca/wp-content/uploads/2025/08/freepik__a-modern-professional-office-setting-with-a-divers__12526.png" alt="People reviewing accessibility audit report on a large computer screen" />
+      <h3>Hands on Training</h3>
+      <p>Hands on one on one training sessions to help better grasp concepts and to have better understanding on how to build digital products.</p>
+    </article>
+    <article>
+      <img src="https://www.microsoft.com/en-us/education/blog/wp-content/uploads/2024/05/EDU22_Hybrid_K12_Student_034-optimized.jpg" alt="Instructor teaching accessibility to a group of developers" />
+      <h3>Accessibility Testing</h3>
+      <p>Consistent testing to ensure that WCAG standards are met.</p>
+    </article>
+  </section>
+
+  <section id="contact" aria-labelledby="contact-title">
+    <h2 id="contact-title">Contact Us</h2>
+    <form aria-describedby="form-instructions">
+      <p id="form-instructions">Fields marked with * are required.</p>
+      <label for="name">Name *</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email *</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="message">Message *</label>
+      <textarea id="message" name="message" required></textarea>
+
+      <button type="submit">Send</button>
+    </form>
+
+    <div id="form-feedback" aria-live="polite"></div>
+  </section>
+
+  <footer role="contentinfo" aria-label="Website footer">
+  <p>&copy; 2025 Accessible Design Co.</p>
+
+  <address>
+    <p>Email: <a href="mailto:info@designco.com">info@designco.com</a></p>
+    <p>Phone: <a href="tel:+1234567890">(123) 456-7890</a></p>
+  </address>
+
+  <nav aria-label="Social media links">
+    <ul>
+      <li><a href="https://twitter.com" aria-label="Visit our Twitter">Twitter</a></li>
+      <li><a href="https://facebook.com" aria-label="Visit our Facebook">Facebook</a></li>
+      <li><a href="https://instagram.com" aria-label="Visit our Instagram">Instagram</a></li>
+    </ul>
+  </nav>
+</footer>
+
+
+  <script>
+    const button = document.querySelector("button");
+    const info = document.getElementById("more-info");
+    const feedback = document.getElementById("form-feedback");
+
+    button.addEventListener("click", () => {
+      const expanded = button.getAttribute("aria-expanded") === "true";
+      button.setAttribute("aria-expanded", !expanded);
+      info.hidden = expanded;
+    });
+
+    document.querySelector("form").addEventListener("submit", (e) => {
+      e.preventDefault();
+      feedback.textContent = "Thank you! Your message has been sent.";
+    });
+  </script>
+</body>
+</html>
