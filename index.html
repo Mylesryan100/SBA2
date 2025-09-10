@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  This header shows company name, Also used a navigation bar and ARIA labels to be more accessible
   <header role="banner">
     <h1>Accessible Design Co.</h1>
     <nav role="navigation" aria-label="Main navigation">
@@ -18,7 +20,7 @@
       </ul>
     </nav>
   </header>
-
+This Hero section talks about the company's passion and purpose
   <section id="hero" aria-labelledby="hero-title">
     <h2 id="hero-title">Designing built with everyone in mind</h2>
     <img src="https://fastly.picsum.photos/id/107/5000/3333.jpg?hmac=RA_wrO9Hs-AelIqfc3yu08bk_5CZ6FhFyy1CQ_qhgjs" alt="Sun shining over a field of grass" />
@@ -28,13 +30,13 @@
       <p>We believe accessibility is universal across all platforms — from websites to applications.</p>
     </div>
   </section>
-
+ This About Us section describes the company and what they stand for
   <section id="about" aria-labelledby="about-title">
     <h2 id="about-title">About Us</h2>
     <img src="https://media.gettyimages.com/id/2151571696/photo/effective-teamwork-in-software-development-to-stronger-team-relationships-and-trust-in-your.jpg?s=2048x2048&w=gi&k=20&c=VsvigMw5w32WTUlSkwfjuCoDjjXq4rc8fLysMan8bLA=" alt="Smiling team member giving a presentation on accessibility" />
     <p>We are passionate about creating websites and applications that everyone can use.</p>
   </section>
-
+This services section talks about the companies services and how they build quick,responsive and accessible websites
   <section id="services" aria-labelledby="services-title">
     <h2 id="services-title">Our Services</h2>
     <article>
@@ -53,7 +55,8 @@
       <p>Consistent testing to ensure that WCAG standards are met.</p>
     </article>
   </section>
-
+  
+  Contact Form with labels for your name email and message box to send messages
   <section id="contact" aria-labelledby="contact-title">
     <h2 id="contact-title">Contact Us</h2>
     <form aria-describedby="form-instructions">
@@ -72,7 +75,7 @@
 
     <div id="form-feedback" aria-live="polite"></div>
   </section>
-
+More contact information about the company including their email,phone number and company name
   <footer role="contentinfo" aria-label="Website footer">
   <p>&copy; 2025 Accessible Design Co.</p>
 
@@ -81,6 +84,7 @@
     <p>Phone: <a href="tel:+1234567890">(123) 456-7890</a></p>
   </address>
 
+Navigational bar that shows social media links like twitter, facebook, and instagram
   <nav aria-label="Social media links">
     <ul>
       <li><a href="https://twitter.com" aria-label="Visit our Twitter">Twitter</a></li>
@@ -90,7 +94,7 @@
   </nav>
 </footer>
 
-
+Javascript adds more interactivity in the Learn More section by using ARIA attributes. Also used aria-live to add a confirmation message
   <script>
     const button = document.querySelector("button");
     const info = document.getElementById("more-info");
